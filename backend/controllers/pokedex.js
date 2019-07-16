@@ -45,7 +45,10 @@ class Pokedex extends BaseController {
   async getDetail(userId, byUserId) {
     try {
       const pokemonPlainObjects = await this.model.find({ userId }).toArray();
-      const pokemons = await PokemonController.getList(byUserId, pokemonPlainObjects.map(pokemon => pokemon.pokemonId));
+      const filter = {
+        pokemonIds: pokemonPlainObjects.map(pokemon => pokemon.pokemonId)
+      }
+      const pokemons = await PokemonController.getList(byUserId, filter);
 
       const result = {
         pokemons: pokemons,

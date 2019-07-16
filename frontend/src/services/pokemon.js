@@ -1,8 +1,8 @@
 import api from './../core/api';
 
 class pokemonService {
-  getList() {
-    return api.get('/pokemon/list');
+  getList(params) {
+    return api.get('/pokemon/list', params);
   }
 }
 

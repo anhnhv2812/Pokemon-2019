@@ -8,7 +8,7 @@ router.get('/list', (req, res, next) => {
     next({ message: MESSAGE.PERMISSION_DENIED });
   }
 
-  pokemonController.getList(req.user._id.toString())
+  pokemonController.getList(req.user._id.toString(), req.query)
     .then(response => res.send(response))
     .catch(error => next(error));
 });
