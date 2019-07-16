@@ -1,0 +1,28 @@
+@import './../../assets/constants';
+
+#pokedex-list-component {
+
+  padding: $space * 6;
+
+  .title {
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: $space * 4;
+  }
+
+  .pokedex-list-item {
+    margin: ($space * 2) $space;
+    padding: $space * 1.5;
+    background: #eeeeee;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background: #e9e9e9;
+    }
+  }
+
+  .owner {
+    font-weight: bold;
+  }
+
+}

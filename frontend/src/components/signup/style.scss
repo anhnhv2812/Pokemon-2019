@@ -1,0 +1,33 @@
+@import './../../assets/constants';
+
+.signup-component {
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: $space * 4;
+  }
+
+  .component-wrapper {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .signup-btn {
+    display: block;
+    width: 100%;
+  }
+
+  .form-component-wrapper,
+  .signup-btn {
+    margin: ($space * 3) 0;
+  }
+
+}

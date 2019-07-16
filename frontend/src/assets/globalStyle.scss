@@ -1,0 +1,30 @@
+@import './constants';
+
+.form-component-wrapper {
+  width: 100%;
+  .label {
+    font-weight: bold;
+    margin-bottom: $space;
+  }
+  .component > input[type=text],
+  .component > input[type=password] {
+    width: 100%;
+    padding: $space * 2;
+    border-radius: 10px;
+    color: #9b9b9b;
+    border: 1px solid #ccc;
+  }
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #fff;
+  padding: $space * 1.5;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $primaryColor;
+  }
+}

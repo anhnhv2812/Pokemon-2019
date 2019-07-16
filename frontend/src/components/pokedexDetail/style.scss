@@ -1,0 +1,25 @@
+@import './../../assets/constants';
+
+.pokedex-detail-component {
+  padding: $space * 6;
+
+  .title {
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: $space * 4;
+  }
+
+  .pokemon-wrapper {
+    margin-bottom: $space * 4;
+  }
+
+  .add-button {
+    font-size: 200%;
+    font-weight: bold;
+    font-style: italic;
+    color: #a00;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: $space * 5;
+  }
+}

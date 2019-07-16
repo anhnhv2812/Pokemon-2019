@@ -1,0 +1,39 @@
+@import './../../assets/constants';
+
+.pokemon-detail-component {
+  display: flex;
+  background: #eeeeee;
+  padding: $space * 4;
+  font-size: 22px;
+  border-radius: 10px;
+
+  .description {
+    margin-left: $space * 4;
+    flex: 1;
+    position: relative;
+
+    > div {
+      margin-bottom: $space * 2;
+    }
+    .name {
+      font-size: 140%;
+      font-weight: bold;
+      margin-bottom: $space * 4;
+    }
+    button {
+      position: absolute;
+      bottom: 7px;
+      background-color: #a82727;
+      color: #fff;
+      font-style: italic;
+      border: 1px solid #6b0000;
+      border-radius: 5px;
+      padding: 10px 30px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(145, 0, 0);
+      }
+    }
+  }
+}
