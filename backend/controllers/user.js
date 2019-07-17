@@ -51,12 +51,15 @@ class User extends BaseController {
 
       userInfo.password = dataSecure.passwordEncript(userInfo.password);
       const savedUser = await this.model.insertOne(userInfo);
-      
-      savedUser.token = dataSecure.jwtToken({
-        _id: savedUser._id
-      });
 
-      return Promise.resolve(savedUser);
+      return _.merge(
+        savedUser.ops[0],
+        {
+          token: dataSecure.jwtToken({
+            _id: savedUser._id
+          })
+        }
+      );
     } catch(error) {
       if (error.code === 11000) {
         error = 'This user existed'
@@ -77,7 +80,7 @@ class User extends BaseController {
         throw _.get(validationResult, 'error.details[0].message') || validationResult.error;
       }
 
-      const loggedUser = await this.model.findOne({ 
+      const loggedUser = await this.model.findOne({
         username: validationResult.value.username,
         password: dataSecure.passwordEncript(validationResult.value.password)
       });
@@ -85,7 +88,7 @@ class User extends BaseController {
       if (!loggedUser) {
         throw 'Invalid username or password';
       }
-      
+
       loggedUser.token = dataSecure.jwtToken({
         _id: loggedUser._id
       });

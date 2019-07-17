@@ -9,12 +9,12 @@ class Pokemon extends BaseController {
 
   async getList(byUserId, filter = {}) {
     const filterCondition = [];
-    
-    if (_.isArray(_.get(filter, 'pokemonIds')) && filter.pokemonIds.length) {
-      filterCondition.push({ 
-        _id: { 
-          $in: filter.pokemonIds.map(id => this.ObjectId(id)) 
-        } 
+
+    if (_.isArray(_.get(filter, 'pokemonIds'))) {
+      filterCondition.push({
+        _id: {
+          $in: filter.pokemonIds.map(id => this.ObjectId(id))
+        }
       });
     }
 
