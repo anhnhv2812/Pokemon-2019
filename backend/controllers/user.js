@@ -105,7 +105,9 @@ class User extends BaseController {
   }
 
   getList() {
-    return this.model.find({}, { projection: { password: 0 } }).toArray();
+    return this.model.find({}, { projection: { password: 0 } })
+    .sort([ [ '_id', -1 ] ])  
+    .toArray();
   }
 }
 

@@ -4,6 +4,7 @@ import { pokemonService } from './../../services';
 import { flashError } from './../../utils/dialog';
 import { redirectTo } from './../../utils/redirect';
 import Pokemon from './../pokedexDetail/pokemonDetail';
+import BackButton from './../../utils/backButton';
 import './style.scss';
 
 class PokedexDetail extends Component {
@@ -67,7 +68,9 @@ class PokedexDetail extends Component {
   render() {
     return (
       <div className="add-pokemon-component">
-        <div className="header" onClick={() => this.goBack()}>Back</div>
+        <div className="header">
+          <BackButton onClick={() => this.goBack()}/>
+        </div>
         <div className="title">Add pokemon to pokedex #{this.state.pokedexId}</div>
         <div className="form-component-wrapper search-bar">
           <div className="component">
